@@ -1,0 +1,26 @@
+---
+const { mensaje, tipo, producto, precio } = Astro.props;
+---
+{tipo === "mensaje" && <div class="flex bg-[#EDE5F2] flex-row text-moderateviolet w-fit max-w-[65%] rounded-xl p-2 text-[.65em] rounded-bl-none">
+  <p>{mensaje}</p>
+</div>}
+
+{tipo === "reply" && <div class="flex bg-white drop-shadow-md flex-row text-desaturateddarkviolet w-fit max-w-[65%] rounded-xl p-2 text-[.65em] self-end rounded-br-none">
+  <p>{mensaje}</p>
+</div>}
+
+{tipo === "imagenes" && <div class="flex drop-shadow-md flex-row text-desaturateddarkviolet w-fit max-w-[75%] rounded-xl py-2 text-[.65em] self-end rounded-br-none [&>img]:w-12 gap-2 [&>img]:rounded-md">
+  <slot />
+</div>}
+
+
+{tipo === "producto" && <div class="flex bg-white drop-shadow-md flex-row text-desaturateddarkviolet w-fit min-w-[80%] rounded-xl px-2 py-3 text-[.65em] rounded-bl-none bg-gradient-to-r from-lightmagenta to-lightviolet gap-2">
+  <span class="radio rounded-full w-4 h-4 border border-solid border-white"></span>
+  <p class="flex flex-row text-white flex-grow">{mensaje}</p>
+  <span class="price text-xs font-bold text-white">{precio}</span>
+</div>}
+
+
+<style>
+
+</style>

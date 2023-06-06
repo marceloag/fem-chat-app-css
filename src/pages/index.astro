@@ -1,5 +1,7 @@
 ---
 import Phone from "../components/phone.astro";
+import Intro from "../components/intro.astro";
+import Background from "../components/background.astro";
 ---
 
 <!DOCTYPE html>
@@ -7,8 +9,6 @@ import Phone from "../components/phone.astro";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- displays site properly based on user's device -->
-
 		<link
 			rel="icon"
 			type="image/png"
@@ -16,43 +16,20 @@ import Phone from "../components/phone.astro";
 			href="/images/favicon-32x32.png"
 		/>
 
-		<title>Frontend Mentor | [Challenge Name Here]</title>
+		<title>Frontend Mentor | Chat App </title>
 	</head>
-	<body>
-		<Phone />
-		<!-- Samuel Green
-  
-
-  That sounds great. I’d be happy with that.
-
-  Could you send over some pictures of your dog, please?
-
-  Here are a few pictures. She’s a happy girl!
-
-  Can you make it?
-
-  She looks so happy! The time we discussed works. How long shall I take her out for?
-
-  30 minute walk
-  $29
-
-  1 hour walk
-  $49
-
-  Type a message…
-
-  Simple booking
-
-  Stay in touch with our dog walkers through the chat interface. This makes it easy to 
-  discuss arrangements and make bookings. Once the walk has been completed you can rate 
-  your walker and book again all through the chat.
-   -->
-		<!-- <div class="attribution">
+	<body class="grid place-items-center h-screen">
+    <Background />
+    <main class="flex flex-col md:flex-row w-3/2 h-auto items-center gap-10 md:gap-40 z-10">
+      <Phone />
+      <Intro />
+    </main>
+		<div class="hidden md:visible attribution absolute bottom-2 text-darkgreyishviolet">
 			Challenge by <a
 				href="https://www.frontendmentor.io?ref=challenge"
 				target="_blank">Frontend Mentor</a
-			>. Coded by <a href="#">Your Name Here</a>.
-		</div> -->
+			>. Coded by <a href="http://github.com/marceloag" class="text-lightviolet font-bold">@marceloag</a>.
+		</div>
 	</body>
 </html>
 

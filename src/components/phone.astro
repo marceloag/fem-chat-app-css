@@ -1,33 +1,66 @@
+---
+import Mensaje from './mensaje.astro'
+---
 <div
-  class="phone shadow-lg rounded-3xl bg-lightgrayishviolet w-72 border-white border-solid border-[10px] flex flex-col justify-start items-center relative"
+  class="phone shadow-2xl rounded-3xl bg-lightgrayishviolet w-72 border-white border-solid border-[10px] flex flex-col justify-start items-center relative"
 >
   <div
     class="flex flex-row justify-center items-center notch w-full absolute z-10 top-0"
   >
-    <div class="bg-white top-0 left-0 right-0 w-7/12 h-6 rounded-b-2xl"></div>
+    <div class="bg-white top-0 left-0 right-0 w-7/12 h-5 rounded-b-2xl"></div>
   </div>
   <header
-    class="bg-gradient-to-r from-lightviolet to-lightmagenta w-full pt-10 pb-4 px-4 text-white flex flex-row justify-start gap-2 items-center z-0 rounded-t-2xl"
+    class="bg-gradient-to-r from-lightviolet to-lightmagenta w-full pt-8 pb-3 px-4 text-white flex flex-row justify-between gap-2 items-center z-0 rounded-t-2xl rounded-b-md"
   >
-    <img
-      src="/images/avatar.jpg"
-      alt=""
-      class="rounded-full w-8 h-8 border-white border-solid border-[2px]"
-    />
-    <div class="flex flex-col gap-0">
-      <h1 class="font-[500] leading-4">Samuel Green</h1>
-      <span class="text-xs leading-4">Available to Walk</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M15 6l-6 6l6 6"></path>
+    </svg>
+    <div class="flex flex-row gap-2 flex-grow">
+      <img
+        src="/images/avatar.jpg"
+        alt=""
+        class="rounded-full w-8 h-8 border-white border-solid border-[2px]"
+      />
+      <div class="flex flex-col gap-0">
+        <h1 class="font-[500] leading-4 text-xs">Samuel Green</h1>
+        <span class="text-[.6em] leading-4 text-paleviolet">Available to Walk</span>
+      </div>   
     </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="14" height="14" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+   <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+   <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+</svg>
   </header>
-  <section class="flex flex-grow w-full"></section>
-  <footer class="flex w-[90%] p-2">
+  <section class="flex flex-col flex-grow w-full gap-2 p-2 items-start">
+    <Mensaje tipo="mensaje" mensaje="That sounds great. I’d be happy with that."/>
+    <Mensaje tipo="mensaje" mensaje="Could you send over some pictures of your dog, please?"/>
+    <Mensaje tipo="imagenes">
+        <img src="/images/dog-image-1.jpg" alt="Dog 1">
+        <img src="/images/dog-image-2.jpg" alt="Dog 2">
+        <img src="/images/dog-image-3.jpg" alt="Dog 3">
+    </Mensaje>
+    <Mensaje tipo="reply" mensaje="Here are a few pictures. She’s a happy girl!"/>
+    <Mensaje tipo="reply" mensaje="Can you make it?"/>
+    <Mensaje tipo="mensaje" mensaje="She looks so happy! The time we discussed works. How long shall I take her out for?"/>
+    <Mensaje tipo="producto" precio="$29" mensaje="30 minute walk"/>
+    <Mensaje tipo="producto" precio="$49" mensaje="1 hour walk"/>
+  </section>
+  <footer class="flex w-[98%] p-2">
     <div
-      class="flex flex-row h-10 rounded-2xl bg-white w-full justify-between items-center p-2"
+      class="flex flex-row h-10 rounded-2xl bg-white w-full justify-between items-center pl-6 pr-0 py-2"
     >
-      <span class="text-xs"> Type a message...</span>
+      <span class="text-xs text-grayishblue"> Type a message...</span>
       <a
         href=""
-        class="rounded-full bg-slate-900 text-white w-8 h-8 text-center">a</a
+        class="rounded-full bg-slate-900 text-white w-8 h-8 flex justify-center items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M9 6l6 6l-6 6"></path>
+      </svg>  
+      </a
       >
     </div>
   </footer>
@@ -35,6 +68,6 @@
 
 <style>
   .phone {
-    aspect-ratio: 9/18;
+    aspect-ratio: 9/19;
   }
 </style>
